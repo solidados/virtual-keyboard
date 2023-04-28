@@ -1,3 +1,4 @@
+// import { create } from 'eslint-plugin-import/lib/rules/no-unresolved.js';
 import { createElement } from './utils/createElem.js';
 import KEY_CONTENT from './utils/keyContent.js';
 
@@ -9,11 +10,41 @@ const textarea = createElement('textarea', 'textarea');
 const keyboard = createElement('div', 'keyboard');
 const description = createElement('p', 'description');
 
-textarea.id = 'textArea';
-description.innerText = 'This virtual keyboard was created in MacOS.\nTo switch languages press Fn';
-
 pageElem.prepend(wrapper);
 wrapper.append(title, textarea, keyboard, description);
+textarea.id = 'textArea';
+// keyboard.append(row);
+description.innerText = 'This virtual keyboard was created in MacOS.\nTo switch languages press Fn';
+
+function createRow() {
+  for (let i = 0; i < KEY_CONTENT.length; i += 1) {
+    const row = createElement('div', 'row');
+    keyboard.append(row);
+    for (let j = 0; j < KEY_CONTENT[i].length; j += 1) {
+      const asciiCode = KEY_CONTENT[i][j];
+      const symbol = String.fromCharCode(asciiCode);
+      const key = createElement('button', 'key', symbol);
+
+      // key.classList.add(KEY_CONTENT[i][j][0]);
+
+      key.insertAdjacentHTML(
+        'afterBegin',
+        `<div class='rus'>
+            <span class='caseDown'>${ KEY_CONTENT[i][j] }</span>
+            <span class='caseUp hidden'>${ KEY_CONTENT[i][j][2] }</span>
+         </div>
+         <div class='eng hidden'>
+            <span class='caseDown hidden'>${ KEY_CONTENT[i][j][3] }</span>
+            <span class='caseUp hidden'>${ KEY_CONTENT[i][j][4] }</span>
+         </div>`,
+      );
+      row.appendChild(key);
+
+      row.append(key);
+    }
+  }
+}
+createRow();
 
 function makeRowOne() {
   const rowOne = createElement('div', 'row__one row');
@@ -25,7 +56,7 @@ function makeRowOne() {
     rowOne.append(button);
   }
 }
-makeRowOne();
+// makeRowOne();
 
 function makeRowTwo() {
   const rowTwo = createElement('div', 'row__two row');
