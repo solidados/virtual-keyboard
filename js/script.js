@@ -1,5 +1,5 @@
 // import { create } from 'eslint-plugin-import/lib/rules/no-unresolved.js';
-import { createElement } from './utils/createElem.js';
+import createElement from './utils/createElem.js';
 import KEY_CONTENT from './utils/keyContent.js';
 
 const pageElem = document.querySelector('.page');
@@ -31,13 +31,35 @@ function createRow() {
             <span class='caseUp hidden'>${ KEY_CONTENT[i][j][2] }</span>
         </div>
         <div class='eng'>
-            <span class='caseDown hidden'>${ KEY_CONTENT[i][j][3] }</span>
+            <span class='caseDown'>${ KEY_CONTENT[i][j][3] }</span>
             <span class='caseUp hidden'>${ KEY_CONTENT[i][j][4] }</span>
         </div>`,
       );
       row.append(key);
+    }
 
-      row.append(key);
+    const rowNum = document.querySelectorAll('.row');
+
+    if (rowNum.length === 5) {
+      const arrowWrap = createElement('div', 'arrow__wrapper');
+      row.append(arrowWrap);
+      const arrowWrapUp = createElement('div', 'arrowWrap__up');
+      const arrowWrapBottom = createElement('div', 'arrowWrap__bottom');
+
+      arrowWrap.append(arrowWrapUp, arrowWrapBottom);
+      const arrowUp = createElement('button', `key ${ KEY_CONTENT[5][0][0] }`);
+      const divRus = createElement('div', 'rus hidden');
+      const spanCaseDownRus = createElement('span', 'caseDown', `${ KEY_CONTENT[5][0][1] }`);
+      const spanCaseUpRus = createElement('span', 'caseUp hidden', `${ KEY_CONTENT[5][0][2] }`);
+
+      const divEng = createElement('div', 'eng');
+      const spanCaseDownEng = createElement('span', 'caseDown', `${ KEY_CONTENT[5][0][3] }`);
+      const spanCaseUpEng = createElement('span', 'caseUp hidden', `${ KEY_CONTENT[5][0][4] }`);
+
+      divRus.append(spanCaseDownRus, spanCaseUpRus);
+      divEng.append(spanCaseDownEng, spanCaseUpEng);
+      arrowUp.append(divRus, divEng);
+      arrowWrapUp.append(arrowUp);
     }
   }
 }

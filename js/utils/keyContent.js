@@ -70,8 +70,10 @@ const KEY_CONTENT = [
     ['AltRight', 'alt', 'alt', 'alt', 'alt'],
   ],
   [
-    ['ArrowLeft', '◄', '◄', '◄', '◄'],
     ['ArrowUp', '▲', '▲', '▲', '▲'],
+  ],
+  [
+    ['ArrowLeft', '◄', '◄', '◄', '◄'],
     ['ArrowDown', '▼', '▼', '▼', '▼'],
     ['ArrowRight', '►', '►', '►', '►'],
   ],

@@ -61,9 +61,6 @@
 .keyboard {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
   width: 745px;
   margin: 0 auto;
   padding: 5px;
@@ -74,6 +71,10 @@
   box-shadow: -6px 4px 9px -1px rgba(130, 124, 124, 0.75);
   -webkit-box-shadow: -6px 4px 9px -1px rgba(130, 124, 124, 0.75);
   -moz-box-shadow: -6px 4px 9px -1px rgba(130, 124, 124, 0.75);
+}
+
+.keyboard .row:nth-child(3) {
+  width: calc(100% - 50px);
 }
 
 .keyboard .row {
@@ -144,12 +145,12 @@
 .keyboard .CapsLock {
   width: 85px;
 }
+
 .keyboard .Enter {
-  position: relative;
-  right: 0;
   width: 40px;
-  height: 80px;
+  height: 85px;
 }
+
 .keyboard .ShiftLeft {
   width: 50px;
 }
