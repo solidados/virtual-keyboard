@@ -17,7 +17,7 @@ textarea.id = 'textArea';
 description.innerText = 'This virtual keyboard was created in MacOS.\nTo switch languages press Fn';
 
 function createRow() {
-  for (let i = 0; i < KEY_CONTENT.length - 1 ; i += 1) {
+  for (let i = 0; i < KEY_CONTENT.length - 1; i += 1) {
     const row = createElement('div', 'row');
     keyboard.append(row);
 
@@ -27,7 +27,7 @@ function createRow() {
       const divRus = createElement('div', 'rus hidden');
       const divEng = createElement('div', 'eng');
       key.append(divRus, divEng);
-      
+
       const spanCaseUpRus = createElement('span', 'caseUp', `${ KEY_CONTENT[i][j][1] }`);
       const spanCaseDownRus = createElement('span', 'caseDown hidden', `${ KEY_CONTENT[i][j][2] }`);
       divRus.append(spanCaseDownRus, spanCaseUpRus);
@@ -62,6 +62,7 @@ function createRow() {
 
       arrowWrap.append(arrowWrapUp, arrowWrapBottom);
 
+      /* Create Arrow buttons */
       const arrowUp = createElement('button', `key ${ KEY_CONTENT[5][0][0] }`);
       const arrowLeft = createElement('button', `key ${ KEY_CONTENT[5][1][0] }`);
       const arrowDown = createElement('button', `key ${ KEY_CONTENT[5][2][0] }`);
@@ -70,16 +71,19 @@ function createRow() {
       arrowWrapUp.append(arrowUp);
       arrowWrapBottom.append(arrowLeft, arrowDown, arrowRight);
 
+      /* Fill Arrows with content */
       const divRus = createElement('div', 'rus hidden');
+      const divEng = createElement('div', 'eng');
+
       const spanCaseDownRus = createElement('span', 'caseDown', `${ KEY_CONTENT[5][0][1] }`);
       const spanCaseUpRus = createElement('span', 'caseUp hidden', `${ KEY_CONTENT[5][0][2] }`);
 
-      const divEng = createElement('div', 'eng');
       const spanCaseDownEng = createElement('span', 'caseDown', `${ KEY_CONTENT[5][0][3] }`);
       const spanCaseUpEng = createElement('span', 'caseUp hidden', `${ KEY_CONTENT[5][0][4] }`);
 
       divRus.append(spanCaseDownRus, spanCaseUpRus);
       divEng.append(spanCaseDownEng, spanCaseUpEng);
+
 
       arrowUp.append(divRus, divEng);
       arrowLeft.append(divRus, divEng);

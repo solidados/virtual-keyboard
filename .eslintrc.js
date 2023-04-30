@@ -4,8 +4,13 @@ module.exports = {
     browser: true,
     es6: true,
   },
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+  },
   rules: {
     'import/extensions': 0,
-    'template-curly-spacing': ['always'],
+    // 'allowForLoopAfterthoughts': true,
+    // 'template-curly-spacing': ['always'],
   },
 };
