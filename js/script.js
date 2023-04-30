@@ -50,9 +50,9 @@ function createRow() {
       row.append(key);
     }
 
+    /* Arrows block */
     const rowNum = document.querySelectorAll('.row');
 
-    /* Arrows block */
     if (rowNum.length === 5) {
       const arrowWrap = createElement('div', 'arrowWrap');
       row.append(arrowWrap);
@@ -72,6 +72,8 @@ function createRow() {
       arrowWrapBottom.append(arrowLeft, arrowDown, arrowRight);
 
       /* Fill Arrows with content */
+      const arrowArray = document.querySelectorAll('.arrow');
+
       const divRus = createElement('div', 'rus hidden');
       const divEng = createElement('div', 'eng');
 
@@ -84,11 +86,7 @@ function createRow() {
       divRus.append(spanCaseDownRus, spanCaseUpRus);
       divEng.append(spanCaseDownEng, spanCaseUpEng);
 
-
-      arrowUp.append(divRus, divEng);
-      arrowLeft.append(divRus, divEng);
-      arrowDown.append(divRus, divEng);
-      arrowRight.append(divRus, divEng);
+      arrowArray.forEach((btn) => btn.append(divRus, divEng));
     }
   }
 }
