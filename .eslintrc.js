@@ -6,6 +6,6 @@ module.exports = {
   },
   rules: {
     'import/extensions': 0,
-    'template-curly-spacing': ['error', 'never'],
+    'template-curly-spacing': ['always'],
   },
 };

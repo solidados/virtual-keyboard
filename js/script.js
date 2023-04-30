@@ -17,29 +17,42 @@ textarea.id = 'textArea';
 description.innerText = 'This virtual keyboard was created in MacOS.\nTo switch languages press Fn';
 
 function createRow() {
-  for (let i = 0; i < KEY_CONTENT.length - 1; i += 1) {
+  for (let i = 0; i < KEY_CONTENT.length - 1 ; i += 1) {
     const row = createElement('div', 'row');
     keyboard.append(row);
 
     for (let j = 0; j < KEY_CONTENT[i].length; j += 1) {
       const key = createElement('button', `key ${ KEY_CONTENT[i][j][0] }`);
 
-      key.insertAdjacentHTML(
+      const divRus = createElement('div', 'rus hidden');
+      const divEng = createElement('div', 'eng');
+      key.append(divRus, divEng);
+      
+      const spanCaseUpRus = createElement('span', 'caseUp', `${ KEY_CONTENT[i][j][1] }`);
+      const spanCaseDownRus = createElement('span', 'caseDown hidden', `${ KEY_CONTENT[i][j][2] }`);
+      divRus.append(spanCaseDownRus, spanCaseUpRus);
+
+      const spanCaseUpEng = createElement('span', 'caseUp', `${ KEY_CONTENT[i][j][3] }`);
+      const spanCaseDownEng = createElement('span', 'caseDown hidden', `${ KEY_CONTENT[i][j][4] }`);
+      divEng.append(spanCaseDownEng, spanCaseUpEng);
+
+      /* key.insertAdjacentHTML(
         'afterBegin',
         `<div class='rus hidden'>
-            <span class='caseDown'>${ KEY_CONTENT[i][j][1] }</span>
-            <span class='caseUp hidden'>${ KEY_CONTENT[i][j][2] }</span>
+            <span class='caseDown hidden'>${ KEY_CONTENT[i][j][1] }</span>
+            <span class='caseUp'>${ KEY_CONTENT[i][j][2] }</span>
         </div>
         <div class='eng'>
-            <span class='caseDown'>${ KEY_CONTENT[i][j][3] }</span>
-            <span class='caseUp hidden'>${ KEY_CONTENT[i][j][4] }</span>
-        </div>`,
-      );
+            <span class='caseDown hidden'>${ KEY_CONTENT[i][j][3] }</span>
+            <span class='caseUp'>${ KEY_CONTENT[i][j][4] }</span>
+            </div>`,
+      ); */
       row.append(key);
     }
 
     const rowNum = document.querySelectorAll('.row');
 
+    /* Arrows block */
     if (rowNum.length === 5) {
       const arrowWrap = createElement('div', 'arrowWrap');
       row.append(arrowWrap);
@@ -49,10 +62,6 @@ function createRow() {
 
       arrowWrap.append(arrowWrapUp, arrowWrapBottom);
 
-      // for (let i = 0; i < KEY_CONTENT[5].length; i++) {
-        
-        
-      // }
       const arrowUp = createElement('button', `key ${ KEY_CONTENT[5][0][0] }`);
       const arrowLeft = createElement('button', `key ${ KEY_CONTENT[5][1][0] }`);
       const arrowDown = createElement('button', `key ${ KEY_CONTENT[5][2][0] }`);
@@ -76,7 +85,6 @@ function createRow() {
       arrowLeft.append(divRus, divEng);
       arrowDown.append(divRus, divEng);
       arrowRight.append(divRus, divEng);
-      // arrowWrapUp.append(arrowUp);
     }
   }
 }
