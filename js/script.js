@@ -41,13 +41,26 @@ function createRow() {
     const rowNum = document.querySelectorAll('.row');
 
     if (rowNum.length === 5) {
-      const arrowWrap = createElement('div', 'arrow__wrapper');
+      const arrowWrap = createElement('div', 'arrowWrap');
       row.append(arrowWrap);
+
       const arrowWrapUp = createElement('div', 'arrowWrap__up');
       const arrowWrapBottom = createElement('div', 'arrowWrap__bottom');
 
       arrowWrap.append(arrowWrapUp, arrowWrapBottom);
+
+      // for (let i = 0; i < KEY_CONTENT[5].length; i++) {
+        
+        
+      // }
       const arrowUp = createElement('button', `key ${ KEY_CONTENT[5][0][0] }`);
+      const arrowLeft = createElement('button', `key ${ KEY_CONTENT[5][1][0] }`);
+      const arrowDown = createElement('button', `key ${ KEY_CONTENT[5][2][0] }`);
+      const arrowRight = createElement('button', `key ${ KEY_CONTENT[5][3][0] }`);
+
+      arrowWrapUp.append(arrowUp);
+      arrowWrapBottom.append(arrowLeft, arrowDown, arrowRight);
+
       const divRus = createElement('div', 'rus hidden');
       const spanCaseDownRus = createElement('span', 'caseDown', `${ KEY_CONTENT[5][0][1] }`);
       const spanCaseUpRus = createElement('span', 'caseUp hidden', `${ KEY_CONTENT[5][0][2] }`);
@@ -58,8 +71,12 @@ function createRow() {
 
       divRus.append(spanCaseDownRus, spanCaseUpRus);
       divEng.append(spanCaseDownEng, spanCaseUpEng);
+
       arrowUp.append(divRus, divEng);
-      arrowWrapUp.append(arrowUp);
+      arrowLeft.append(divRus, divEng);
+      arrowDown.append(divRus, divEng);
+      arrowRight.append(divRus, divEng);
+      // arrowWrapUp.append(arrowUp);
     }
   }
 }
