@@ -10,7 +10,5 @@ module.exports = {
   },
   rules: {
     'import/extensions': 0,
-    // 'allowForLoopAfterthoughts': true,
-    // 'template-curly-spacing': ['always'],
   },
 };

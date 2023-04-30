@@ -6,6 +6,7 @@
  *          onClickHandler?: (event: Event) => void}} objectParams
  * @returns {HTMLElement}
  */
+
 export default function createElement(tagName, className, textContent, onClickHandler) {
   const element = document.createElement(tagName);
   className.split(' ').forEach((/** @type {string} */ name) => {
