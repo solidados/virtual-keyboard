@@ -104,15 +104,20 @@
   cursor: pointer;
   user-select: none;
   transition: border-radius 0.3s, background-color 0.3s;
+  transition: 1.5s cubic-bezier(.43, 1.59, .64, .26);
 }
 
 .keyboard .key:hover {
+  transform: scale3d(1.1, 1.1, 1.1);
+  transition: 1.5s cubic-bezier(.43, 1.59, .64, .26);
   background-color: #e2e2e2;
   color: #444444;
 }
 
 .keyboard .key:active,
 .keyboard .key.active {
+  transform: scale3d(1.2, 1.2, 1.2);
+  transition: 1.5s cubic-bezier(.43, 1.59, .64, .26);
   background-color: #e2e2e2;
   color: #444444;
 }
