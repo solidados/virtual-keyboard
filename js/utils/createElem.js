@@ -7,7 +7,7 @@
  * @returns {HTMLElement}
  */
 
-export default function createElement(tagName, className, textContent, onClickHandler) {
+const createElement = (tagName, className, textContent, onClickHandler) => {
   const element = document.createElement(tagName);
   className.split(' ').forEach((/** @type {string} */ name) => {
     element.classList.add(name);
@@ -19,4 +19,6 @@ export default function createElement(tagName, className, textContent, onClickHa
     element.addEventListener('click', onClickHandler);
   }
   return element;
-}
+};
+
+export default createElement;

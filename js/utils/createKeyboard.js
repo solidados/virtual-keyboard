@@ -1,7 +1,7 @@
 import createElement from './createElem.js';
 import KEY_CONTENT from './keyContent.js';
 
-function createRow() {
+const createRow = () => {
   const keyboard = document.querySelector('.keyboard');
 
   for (let i = 0; i < KEY_CONTENT.length - 1; i += 1) {
@@ -68,5 +68,6 @@ function createRow() {
       });
     }
   }
-}
+};
+
 export default createRow;

@@ -1,4 +1,4 @@
-function blinkButton(event, keyEvent) {
+const blinkButton = (event, keyEvent) => {
   const keys = document.querySelectorAll('.key');
   const textarea = document.querySelector('.textarea');
 
@@ -18,6 +18,6 @@ function blinkButton(event, keyEvent) {
       }
     }
   });
-}
+};
 
 export default blinkButton;
