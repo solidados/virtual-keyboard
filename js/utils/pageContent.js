@@ -1,6 +1,6 @@
 import createElement from './createElem.js';
 
-function createPageContent() {
+const createPageContent = () => {
   const pageElem = document.querySelector('.page');
 
   const wrapper = createElement('div', 'wrapper');
@@ -13,6 +13,6 @@ function createPageContent() {
   wrapper.append(title, textarea, keyboard, description);
 
   description.innerText = 'This virtual keyboard was created on MacOS.\nTo switch languages press Fn';
-}
+};
 
 export default createPageContent;
