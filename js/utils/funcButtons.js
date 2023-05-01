@@ -1,4 +1,7 @@
+const events = ['mousedown', 'keydown'];
+
 const pressHandler = (event) => {
+  event.preventDefault();
   const { target } = event;
   const textarea = document.querySelector('.textarea');
   if (target.closest('.key')) {
@@ -7,7 +10,6 @@ const pressHandler = (event) => {
     } else if (target.closest('.Enter')) {
       textarea.innerHTML += '\n';
     } else if (target.closest('.Tab')) {
-      event.preventDefault();
       textarea.innerHTML += '\t';
     } else {
       textarea.innerHTML += event.target.innerText;
@@ -15,4 +17,4 @@ const pressHandler = (event) => {
   }
 };
 
-export default pressHandler;
+export { events, pressHandler };

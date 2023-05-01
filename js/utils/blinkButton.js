@@ -6,7 +6,13 @@ function blinkButton(event, keyEvent) {
     if (element.classList.contains(event.code)) {
       if (keyEvent === 'keydown') {
         element.classList.add('active');
-        textarea.innerHTML += event.key;
+        if (event.key === 'Tab') {
+          textarea.innerHTML += '\t';
+        } else if (event.key === 'Enter') {
+          textarea.innerHTML += '\n';
+        } else {
+          textarea.innerHTML += event.key;
+        }
       } else {
         element.classList.remove('active');
       }
