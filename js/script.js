@@ -4,7 +4,6 @@ import blinkButton from './utils/blinkButton.js';
 import switchKeyCase from './utils/switchKeyCase.js';
 import changeLanguage from './utils/languageAndCase.js';
 import { events, pressHandler } from './utils/funcButtons.js';
-import autoScrollArea from './utils/autoScrollArea.js';
 
 createPageContent();
 createRow();
@@ -23,4 +22,3 @@ events.forEach((el) => {
 
 switchKeyCase();
 changeLanguage();
-autoScrollArea();
