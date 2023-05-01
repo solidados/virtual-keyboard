@@ -1,31 +1,14 @@
-import { createRow, textarea } from './utils/createKeyboard.js';
+import createPageContent from './utils/pageContent.js';
+import createRow from './utils/createKeyboard.js';
+import blinkButton from './utils/blinkButton.js';
 
+createPageContent();
 createRow();
 
-const keys = document.querySelectorAll('.key');
-
 document.addEventListener('keydown', (event) => {
-  keys.forEach((element) => {
-    if (element.classList.contains(event.code)) {
-      element.classList.add('active');
-      textarea.innerHTML += event.key;
-    }
-  });
+  blinkButton(event, 'keydown');
 });
 
 document.addEventListener('keyup', (event) => {
-  keys.forEach((element) => {
-    if (element.classList.contains(event.code)) {
-      element.classList.remove('active');
-    }
-  });
+  blinkButton(event, 'keyup');
 });
-
-// const arr = [];
-// window.addEventListener('keydown', (UIEvent) => {
-//   console.log(UIEvent.code);
-// });
-
-/* window.addEventListener('keydown', (event) => {
-
-}); */
