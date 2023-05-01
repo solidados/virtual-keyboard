@@ -1,0 +1,17 @@
+{
+  "name": "virtual-keyboard",
+  "version": "1.0.0",
+  "description": "This task is to create a virtual keyboard. ### Functional requirements: - design is at your discretion - index.html file should be empty (all the necessary elements are generated with the usage of JS) - pressing a key on a physical keyboard highlights the key on the virtual keyboard - if several buttons are pressed, all the pressed buttons are highlighted on the virtual keyboard (there're no exceptions for `Ctrl`, `Alt`, and `Shift` as well)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^8.39.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.27.5"
+  }
+}

@@ -1,0 +1,209 @@
+.page {
+  margin: 0 auto;
+  font-family: Helvetica, sans-serif;
+  background: #ccc;
+}
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-sizing: content-box;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.description,
+.language,
+.title {
+  margin: 10px auto;
+  text-align: center;
+
+  font-size: 1.1em;
+  font-weight: 200;
+  line-height: 1.6;
+  color: #4f4f4f;
+}
+
+.title {
+  font-size: 30px;
+}
+
+.textarea {
+  display: block;
+  width: 700px;
+  height: 200px;
+  margin: 10px auto 5px;
+  padding: 10px;
+  border: 15px outset #4f4f4f;
+  border-radius: 15px;
+  box-shadow: -6px 4px 9px -1px rgba(130, 124, 124, 0.75);
+  -webkit-box-shadow: -6px 4px 9px -1px rgba(130, 124, 124, 0.75);
+  -moz-box-shadow: -6px 4px 9px -1px rgba(130, 124, 124, 0.75);
+  background-color: #edf7fd;
+
+  font-size: 18px;
+  color: #444444;
+}
+
+.caseDown,
+.caseUp,
+.shiftCaps {
+  display: block;
+  width: 100%;
+  min-height: 40px;
+}
+
+.hidden {
+  display: none;
+}
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  width: 745px;
+  margin: 0 auto;
+  padding: 5px;
+  padding-left: 0;
+  padding-bottom: 0;
+  border-radius: 12px;
+  background: #dfdfdf;
+  box-shadow: -6px 4px 9px -1px rgba(130, 124, 124, 0.75);
+  -webkit-box-shadow: -6px 4px 9px -1px rgba(130, 124, 124, 0.75);
+  -moz-box-shadow: -6px 4px 9px -1px rgba(130, 124, 124, 0.75);
+}
+
+.keyboard .row:nth-child(3) {
+  width: calc(100% - 50px);
+}
+
+.keyboard .row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 5px;
+  clear: both;
+}
+
+.keyboard .key {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: middle;
+  float: left;
+  width: 40px;
+  height: 40px;
+  margin-left: 5px;
+  background: #444444;
+  border-radius: 7px;
+  font-weight: 500;
+  line-height: 40px;
+  text-align: center;
+  color: #ffffff;
+  cursor: pointer;
+  user-select: none;
+  transition: border-radius 0.3s, background-color 0.3s;
+  transition: 1.5s cubic-bezier(.43, 1.59, .64, .26);
+}
+
+.keyboard .key:hover {
+  transform: scale3d(1.1, 1.1, 1.1);
+  transition: 1.5s cubic-bezier(.43, 1.59, .64, .26);
+  background-color: #e2e2e2;
+  color: #444444;
+}
+
+.keyboard .key:active,
+.keyboard .key.active {
+  transform: scale3d(1.2, 1.2, 1.2);
+  transition: 1.5s cubic-bezier(.43, 1.59, .64, .26);
+  background-color: #e2e2e2;
+  color: #444444;
+}
+
+.keyboard .AltLeft,
+.keyboard .AltRight,
+.keyboard .ArrowUp,
+.keyboard .ArrowLeft,
+.keyboard .ArrowDown,
+.keyboard .ArrowRight,
+.keyboard .Backspace,
+.keyboard .CapsLock,
+.keyboard .CtrlLeft,
+.keyboard .Enter,
+.keyboard .ShiftLeft,
+.keyboard .ShiftRight,
+.keyboard .Tab,
+.keyboard .Fn,
+.keyboard .CmdLeft,
+.keyboard .CmdRight {
+  background: #444444;
+  font-size: 0.9em;
+}
+
+.keyboard .Backspace,
+.keyboard .Tab {
+  width: 75px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.keyboard .Backspace {
+  justify-content: flex-end;
+}
+
+.keyboard .Tab {
+  justify-content: flex-start;
+}
+
+.keyboard .CapsLock {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 85px;
+}
+
+.keyboard .Enter {
+  height: 85px;
+  /* clip-path: polygon(35% 0, 76% 0, 75% 100%, 44% 100%, 44% 36%, 35% 36%); */
+}
+
+.keyboard .ShiftLeft {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 65px;
+}
+
+.keyboard .ShiftRight {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 115px;
+}
+
+.keyboard .Space {
+  width: 330px;
+}
+
+.keyboard .Fn,
+.keyboard .CtrlLeft {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  font-size: .7em;
+}
+
+.arrowWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.key.arrow {
+  height: 20px;
+  font-size: 7px;
+}
