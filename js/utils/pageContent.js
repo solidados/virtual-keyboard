@@ -11,7 +11,6 @@ function createPageContent() {
 
   pageElem.prepend(wrapper);
   wrapper.append(title, textarea, keyboard, description);
-  textarea.id = 'textArea';
 
   description.innerText = 'This virtual keyboard was created on MacOS.\nTo switch languages press Fn';
 }
